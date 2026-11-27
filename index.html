@@ -631,7 +631,7 @@ $('btnFinish').onclick = showFinal;
 $('btnSound').onclick = ()=>{ muted=!muted; $('btnSound').innerHTML = (muted?'🔇':'🔊')+'<span class="zh">音效</span>'; if(!muted) SFX.tap(); };
 $('btnFinish2').onclick = ()=>{ renderRounds(); showFinal(); };
 $('btnAgain').onclick = ()=>{ SFX.chime(); results.length=0; round=0; newRound(); };
-document.querySelectorAll('.ov').forEach(o=>o.addEventListener('click',e=>{ if(e.target===o && o.id!=='start' && o.id!=='final') o.classList.remove('show'); }));
+// pop-ups only close with their own buttons (a stray tap on the TV won't close them)
 
 newRound();
 </script>
